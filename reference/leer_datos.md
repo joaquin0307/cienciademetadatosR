@@ -27,6 +27,7 @@ Un data frame (tibble) con los datos diarios de la estación.
 ## Examples
 
 ``` r
+
 # \donttest{
 datos <- leer_datos("NH0472", destino = tempfile(fileext = ".csv"))
 head(datos)
@@ -46,5 +47,6 @@ head(datos)
 #> #   temperatura_inte_5cm <lgl>, temperatura_intemperie_150cm_minima <lgl>,
 #> #   humedad_suelo <lgl>, precipitacion_pluviometrica <dbl>, granizo <dbl>,
 #> #   nieve <dbl>, heliofania_efectiva <dbl>, heliofania_relativa <dbl>, …
+
 # }
 ```
