@@ -5,6 +5,11 @@ meteorológicos diarios de estaciones del INTA. Sirve para descargar los
 datos de una estación, resumir sus temperaturas y graficar cómo varía la
 temperatura a lo largo del año.
 
+# Aclaración
+
+Este paquete está pensado para ser usado de prueba, no está pensado para
+ser usado como tal
+
 ## Instalación
 
 Se puede instalar la versión en desarrollo desde
