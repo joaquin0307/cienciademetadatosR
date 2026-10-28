@@ -1,4 +1,4 @@
-# cienciademetadatosR ![](reference/figures/logo.jpeg)
+# cienciademetadatosR
 
 `cienciademetadatosR` es un paquete de R para trabajar con datos
 meteorológicos diarios de estaciones del INTA. Sirve para descargar los
