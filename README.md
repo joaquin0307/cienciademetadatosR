@@ -101,3 +101,11 @@ Para un recorrido más completo, ver la viñeta:
 
 Trabajo realizado para el curso [Introducción a la
 programación](https://intro-programacion.netlify.app/).
+
+## Cómo contribuir
+
+Si querés contribuir a este paquete, leé la [guía de
+contribución](.github/CONTRIBUTING.md).
+
+Este proyecto tiene un [código de conducta](CODE_OF_CONDUCT.md). Al
+participar, aceptás cumplir con sus términos.
