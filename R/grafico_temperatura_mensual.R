@@ -27,8 +27,9 @@
 grafico_temperatura_mensual <- function(datos, ids = unique(datos$id),
                                         colores = NULL, titulo = "Temperatura") {
 
-  if (!all(ids %in% datos$id)) {
-    cli::cli_abort("No se encontr\u00f3 alguna de las estaciones en {.arg datos}.")
+  faltantes <- setdiff(ids, datos$id)
+  if (length(faltantes) > 0) {
+    cli::cli_abort("No se encontraron estas estaciones en {.arg datos}: {faltantes}.")
   }
 
   datos <- datos |>

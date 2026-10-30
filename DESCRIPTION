@@ -2,8 +2,8 @@ Package: cienciademetadatosR
 Title: Análisis de Datos Meteorológicos
 Version: 0.0.0.9000
 Authors@R: c(
-    person("Máximo", "Bustos", , "maximorbustos@gmail.com", role = c("aut", "cre")),
-    person("Joaquín", "Larroux", , "joaquinlarroux@gmail.com", role = "aut")
+    person("Máximo", "Bustos", , "maximorbustos@gmail.com", role = "aut"),
+    person("Joaquín", "Larroux", , "joaquinlarroux@gmail.com", role = c("aut", "cre"))
     )
 Description: Descarga, resume y grafica datos meteorológicos diarios de
     estaciones del INTA.
