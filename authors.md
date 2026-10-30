@@ -2,9 +2,9 @@
 
 ## Authors
 
-- **Máximo Bustos**. Author, maintainer.
+- **Máximo Bustos**. Author.
 
-- **Joaquín Larroux**. Author.
+- **Joaquín Larroux**. Author, maintainer.
 
 ## Citation
 
