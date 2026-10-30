@@ -2,9 +2,9 @@
 
 ## Authors
 
-- **Maximo Bustos**. Author, maintainer.
+- **Máximo Bustos**. Author, maintainer.
 
-- **Joaquin Larroux**. Author.
+- **Joaquín Larroux**. Author.
 
 ## Citation
 
@@ -17,7 +17,7 @@ Meteorológicos*. R package version 0.0.0.9000,
 
     @Manual{,
       title = {cienciademetadatosR: Análisis de Datos Meteorológicos},
-      author = {Maximo Bustos and Joaquin Larroux},
+      author = {Máximo Bustos and Joaquín Larroux},
       year = {2026},
       note = {R package version 0.0.0.9000},
       url = {https://github.com/joaquin0307/cienciademetadatosR},
