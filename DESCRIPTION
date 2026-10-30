@@ -1,5 +1,5 @@
 Package: cienciademetadatosR
-Title: Analisis datos meteorologicos
+Title: Análisis de Datos Meteorológicos
 Version: 0.0.0.9000
 Authors@R: c(
     person("Maximo", "Bustos", , "maximorbustos@gmail.com", role = c("aut", "cre")),
