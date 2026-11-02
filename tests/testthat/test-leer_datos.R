@@ -3,7 +3,7 @@ test_that("descarga y lee los datos de una estacion", {
   skip_on_cran()
 
   destino <- tempfile(fileext = ".csv")
-  datos <- leer_datos("NH0910", destino = destino)
+  datos <- suppressMessages(leer_datos("NH0910", destino = destino))
 
   expect_true(file.exists(destino))
   expect_s3_class(datos, "data.frame")
