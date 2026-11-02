@@ -20,7 +20,8 @@ Imports:
     dplyr,
     ggplot2,
     lubridate,
-    readr
+    readr,
+    rlang
 Suggests: 
     curl,
     knitr,
