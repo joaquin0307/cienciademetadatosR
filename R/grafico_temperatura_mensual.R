@@ -27,6 +27,16 @@
 grafico_temperatura_mensual <- function(datos, ids = unique(datos$id),
                                         colores = NULL, titulo = "Temperatura") {
 
+  if (!is.null(colores) && length(colores) != length(unique(ids))) {
+    cli::cli_abort(c(
+      "{.arg colores} tiene que tener un color por estacion.",
+      "x" = "Hay {length(unique(ids))} estacion(es) y {length(colores)} color(es)."
+    ))
+  }
+  if (!is.character(titulo) || length(titulo) != 1) {
+    cli::cli_abort("{.arg titulo} debe ser un solo texto.")
+  }
+
   faltantes <- setdiff(ids, datos$id)
   if (length(faltantes) > 0) {
     cli::cli_abort("No se encontraron estas estaciones en {.arg datos}: {faltantes}.")
@@ -41,7 +51,10 @@ grafico_temperatura_mensual <- function(datos, ids = unique(datos$id),
 
   if (is.null(colores)) {
     colores <- sample(grDevices::colors(), dplyr::n_distinct(datos$id))
-  }
+    cli::cli_inform(c(
+      "i" = "Se eligieron colores al azar: {.val {colores}}. Para fijarlos, usa el argumento {.arg colores}."
+    ))
+    }
 
   ggplot2::ggplot(datos, ggplot2::aes(x = mes, y = prom, color = id)) +
     ggplot2::geom_line() +
