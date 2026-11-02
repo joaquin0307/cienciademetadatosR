@@ -78,11 +78,16 @@ grafico_temperatura_mensual <- function(datos, ids = unique(datos$id),
 
   if (is.null(colores)) {
     colores <- sample(grDevices::colors(), dplyr::n_distinct(datos$id))
+    cli::cli_inform(c(
+      "i" = "Se eligieron colores al azar: {.val {colores}}.",
+      " " = "Para fijarlos, us\u00e1 el argumento {.arg colores}."
+    ))
   }
 
   ggplot2::ggplot(datos, ggplot2::aes(x = mes, y = prom, color = id)) +
     ggplot2::geom_line() +
     ggplot2::scale_color_manual(values = colores) +
     ggplot2::scale_x_continuous(breaks = 1:12) +
-    ggplot2::labs(x = "mes", y = "promedio", title = titulo)
+    ggplot2::labs(x = "Mes", y = "Temperatura media (\u00b0C)", color = "Estaci\u00f3n",
+                  title = titulo)
 }
