@@ -15,10 +15,13 @@ leer_datos(id_estacion, destino)
 - id_estacion:
 
   Texto con el identificador de la estación (por ejemplo `"NH0472"`).
+  Las estaciones disponibles son NH0046, NH0098, NH0437, NH0472 y
+  NH0910.
 
 - destino:
 
-  Ruta del archivo donde se guardan los datos descargados.
+  Ruta del archivo donde se guardan los datos descargados. La carpeta
+  tiene que existir.
 
 ## Value
 
@@ -27,9 +30,9 @@ Un data frame (tibble) con los datos diarios de la estación.
 ## Examples
 
 ``` r
-
 # \donttest{
 datos <- leer_datos("NH0472", destino = tempfile(fileext = ".csv"))
+#> ✔ Datos de "NH0472" guardados en /tmp/RtmpAyBkiq/file19a17d6116a3.csv.
 head(datos)
 #> # A tibble: 6 × 35
 #>   id     fecha      temperatura_abrigo_150cm temperatura_abrigo_150cm_maxima
@@ -47,6 +50,5 @@ head(datos)
 #> #   temperatura_inte_5cm <lgl>, temperatura_intemperie_150cm_minima <lgl>,
 #> #   humedad_suelo <lgl>, precipitacion_pluviometrica <dbl>, granizo <dbl>,
 #> #   nieve <dbl>, heliofania_efectiva <dbl>, heliofania_relativa <dbl>, …
-
 # }
 ```
