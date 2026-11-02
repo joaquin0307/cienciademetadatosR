@@ -44,6 +44,8 @@ Un gráfico de `ggplot2`.
 
 ``` r
 grafico_temperatura_mensual(estaciones, ids = c("NH0472", "NH0910"))
+#> ℹ Se eligieron colores al azar: "gray20" and "lightcyan2".
+#>   Para fijarlos, usá el argumento `colores`.
 
 
 grafico_temperatura_mensual(

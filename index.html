@@ -98,36 +98,128 @@
 <p>El paquete también incluye el conjunto de datos <code>estaciones</code>, con registros diarios de temperatura de 5 estaciones entre 2010 y 2017, para usar en los ejemplos.</p>
 </div>
 <div class="section level2">
-<h2 id="ejemplo">Ejemplo<a class="anchor" aria-label="anchor" href="#ejemplo"></a>
+<h2 id="ejemplos">Ejemplos<a class="anchor" aria-label="anchor" href="#ejemplos"></a>
 </h2>
+<p>Primero cargamos el paquete:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/joaquin0307/cienciademetadatosR" class="external-link">cienciademetadatosR</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">estaciones</span><span class="op">)</span></span>
-<span><span class="co">#&gt;       id      fecha temperatura_abrigo_150cm temperatura_abrigo_150cm_maxima</span></span>
-<span><span class="co">#&gt; 1 NH0472 2010-01-01                    23.35                            27.5</span></span>
-<span><span class="co">#&gt; 2 NH0472 2010-01-02                    23.85                            31.9</span></span>
-<span><span class="co">#&gt; 3 NH0472 2010-01-03                    26.00                            31.8</span></span>
-<span><span class="co">#&gt; 4 NH0472 2010-01-04                    28.00                            34.5</span></span>
-<span><span class="co">#&gt; 5 NH0472 2010-01-05                    27.50                            36.1</span></span>
-<span><span class="co">#&gt; 6 NH0472 2010-01-06                    22.05                            25.5</span></span>
-<span><span class="co">#&gt;   temperatura_abrigo_150cm_minima</span></span>
-<span><span class="co">#&gt; 1                            19.2</span></span>
-<span><span class="co">#&gt; 2                            15.8</span></span>
-<span><span class="co">#&gt; 3                            20.2</span></span>
-<span><span class="co">#&gt; 4                            21.5</span></span>
-<span><span class="co">#&gt; 5                            18.9</span></span>
-<span><span class="co">#&gt; 6                            18.6</span></span></code></pre></div>
-<p>Resumen de temperaturas de dos estaciones:</p>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/joaquin0307/cienciademetadatosR" class="external-link">cienciademetadatosR</a></span><span class="op">)</span></span></code></pre></div>
+<div class="section level3">
+<h3 id="los-datos-de-ejemplo">Los datos de ejemplo<a class="anchor" aria-label="anchor" href="#los-datos-de-ejemplo"></a>
+</h3>
+<p>El dataset <code>estaciones</code> tiene una fila por día y por estación, con la temperatura media, máxima y mínima medida en el abrigo meteorológico a 150 cm. Estas son las primeras filas:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="reference/tabla_resumen_temperatura.html">tabla_resumen_temperatura</a></span><span class="op">(</span><span class="va">estaciones</span>, ids <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"NH0472"</span>, <span class="st">"NH0910"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 2 × 5</span></span>
-<span><span class="co">#&gt;   id     temp_minima temp_maxima promedio desvio</span></span>
-<span><span class="co">#&gt;   &lt;chr&gt;        &lt;dbl&gt;       &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt; 1 NH0472        -6          40.6     19.0   5.94</span></span>
-<span><span class="co">#&gt; 2 NH0910        -7.5        43       18.0   6.22</span></span></code></pre></div>
-<p>Temperatura media mensual:</p>
+<code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">estaciones</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<table class="table">
+<colgroup>
+<col width="20%">
+<col width="20%">
+<col width="20%">
+<col width="20%">
+<col width="20%">
+</colgroup>
+<thead><tr>
+<th align="left">id</th>
+<th align="left">fecha</th>
+<th align="right">temperatura_abrigo_150cm</th>
+<th align="right">temperatura_abrigo_150cm_maxima</th>
+<th align="right">temperatura_abrigo_150cm_minima</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="left">NH0472</td>
+<td align="left">2010-01-01</td>
+<td align="right">23.35</td>
+<td align="right">27.5</td>
+<td align="right">19.2</td>
+</tr>
+<tr>
+<td align="left">NH0472</td>
+<td align="left">2010-01-02</td>
+<td align="right">23.85</td>
+<td align="right">31.9</td>
+<td align="right">15.8</td>
+</tr>
+<tr>
+<td align="left">NH0472</td>
+<td align="left">2010-01-03</td>
+<td align="right">26.00</td>
+<td align="right">31.8</td>
+<td align="right">20.2</td>
+</tr>
+<tr>
+<td align="left">NH0472</td>
+<td align="left">2010-01-04</td>
+<td align="right">28.00</td>
+<td align="right">34.5</td>
+<td align="right">21.5</td>
+</tr>
+<tr>
+<td align="left">NH0472</td>
+<td align="left">2010-01-05</td>
+<td align="right">27.50</td>
+<td align="right">36.1</td>
+<td align="right">18.9</td>
+</tr>
+<tr>
+<td align="left">NH0472</td>
+<td align="left">2010-01-06</td>
+<td align="right">22.05</td>
+<td align="right">25.5</td>
+<td align="right">18.6</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section level3">
+<h3 id="descargar-los-datos-de-una-estación-leer_datos">Descargar los datos de una estación: <code>leer_datos()</code>
+<a class="anchor" aria-label="anchor" href="#descargar-los-datos-de-una-estaci%C3%B3n-leer_datos"></a>
+</h3>
+<p>Descarga el archivo completo de una estación desde internet, lo guarda en la ruta que le indiques y lo devuelve como tabla. Sirve cuando necesitás todas las variables o todos los años de una estación, y no solo el recorte de <code>estaciones</code>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">datos_nh0437</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/leer_datos.html">leer_datos</a></span><span class="op">(</span><span class="st">"NH0437"</span>, destino <span class="op">=</span> <span class="st">"NH0437.csv"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="resumir-las-temperaturas-tabla_resumen_temperatura">Resumir las temperaturas: <code>tabla_resumen_temperatura()</code>
+<a class="anchor" aria-label="anchor" href="#resumir-las-temperaturas-tabla_resumen_temperatura"></a>
+</h3>
+<p>Calcula, para cada estación, la temperatura mínima y máxima registradas, y el promedio y el desvío estándar de la temperatura media. Sirve para comparar rápidamente el clima de varias estaciones.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span></span>
+<span>  <span class="fu"><a href="reference/tabla_resumen_temperatura.html">tabla_resumen_temperatura</a></span><span class="op">(</span><span class="va">estaciones</span>, ids <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"NH0472"</span>, <span class="st">"NH0910"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>  digits <span class="op">=</span> <span class="fl">1</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<table class="table">
+<thead><tr>
+<th align="left">id</th>
+<th align="right">temp_minima</th>
+<th align="right">temp_maxima</th>
+<th align="right">promedio</th>
+<th align="right">desvio</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="left">NH0472</td>
+<td align="right">-6.0</td>
+<td align="right">40.6</td>
+<td align="right">19</td>
+<td align="right">5.9</td>
+</tr>
+<tr>
+<td align="left">NH0910</td>
+<td align="right">-7.5</td>
+<td align="right">43.0</td>
+<td align="right">18</td>
+<td align="right">6.2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section level3">
+<h3 id="graficar-la-temperatura-a-lo-largo-del-año-grafico_temperatura_mensual">Graficar la temperatura a lo largo del año: <code>grafico_temperatura_mensual()</code>
+<a class="anchor" aria-label="anchor" href="#graficar-la-temperatura-a-lo-largo-del-a%C3%B1o-grafico_temperatura_mensual"></a>
+</h3>
+<p>Calcula la temperatura media de cada mes y dibuja una línea por estación, así se ve el ciclo anual de la temperatura (verano e invierno).</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/grafico_temperatura_mensual.html">grafico_temperatura_mensual</a></span><span class="op">(</span></span>
 <span>  <span class="va">estaciones</span>,</span>
 <span>  ids <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"NH0472"</span>, <span class="st">"NH0910"</span><span class="op">)</span>,</span>
@@ -136,6 +228,7 @@
 <span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-grafico-1.png" alt="" width="100%"></p>
 <p>Para un recorrido más completo, ver la viñeta: <code><a href="articles/cienciademetadatosR.html">vignette("cienciademetadatosR")</a></code>.</p>
+</div>
 </div>
 <div class="section level2">
 <h2 id="autores">Autores<a class="anchor" aria-label="anchor" href="#autores"></a>

@@ -167,7 +167,9 @@ del data frame:</p>
 media de cada mes y dibuja una línea por estación. Así se ve el ciclo
 anual de la temperatura.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/grafico_temperatura_mensual.html">grafico_temperatura_mensual</a></span><span class="op">(</span><span class="va">estaciones</span>, ids <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"NH0472"</span>, <span class="st">"NH0910"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/grafico_temperatura_mensual.html">grafico_temperatura_mensual</a></span><span class="op">(</span><span class="va">estaciones</span>, ids <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"NH0472"</span>, <span class="st">"NH0910"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Se eligieron colores al azar: <span style="color: #0000BB;">"gray20"</span> and <span style="color: #0000BB;">"lightcyan2"</span>.</span></span>
+<span><span class="co">#&gt;   Para fijarlos, usá el argumento `colores`.</span></span></code></pre></div>
 <p><img src="cienciademetadatosR_files/figure-html/unnamed-chunk-8-1.png" class="r-plt" alt="" width="672"></p>
 <p>Si no se indican colores, la función los elige al azar. Para un
 gráfico reproducible conviene pasar un color por estación y un título

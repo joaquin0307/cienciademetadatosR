@@ -1,9 +1,9 @@
 # Datos meteorológicos de estaciones del INTA
 
 Registros diarios de temperatura de 5 estaciones meteorológicas (NH0046,
-NH0098, NH0437, NH0472 y NH0910) entre 2010 y 2017. Es un recorte de los
-datos descargados del repositorio del curso, pensado para usar en los
-ejemplos del paquete.
+NH0098, NH0437, NH0472 y NH0910) entre 2010 y 2017. Los datos son del
+INTA (Instituto Nacional de Tecnología Agropecuaria). Es un recorte de
+los datos originales, pensado para usar en los ejemplos del paquete.
 
 ## Usage
 
@@ -37,4 +37,4 @@ Un data frame con 5 columnas:
 
 ## Source
 
-<https://github.com/rse-r/intro-programacion/tree/main/datos>
+INTA (Instituto Nacional de Tecnología Agropecuaria).
