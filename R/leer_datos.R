@@ -1,7 +1,6 @@
 #' Descargar datos de una estación meteorológica
 #'
-#' Descarga el archivo con los datos diarios de una estación desde el
-#' repositorio del curso, lo guarda en `destino` y lo devuelve como data frame.
+#' Descarga el archivo con los datos diarios de una estación del INTA lo guarda en `destino` y lo devuelve como data frame.
 #'
 #' @param id_estacion Texto con el identificador de la estación
 #'   (por ejemplo `"NH0472"`). Las estaciones disponibles son NH0046,

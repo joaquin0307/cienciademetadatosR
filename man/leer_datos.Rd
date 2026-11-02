@@ -18,8 +18,7 @@ La carpeta tiene que existir.}
 Un data frame (tibble) con los datos diarios de la estación.
 }
 \description{
-Descarga el archivo con los datos diarios de una estación desde el
-repositorio del curso, lo guarda en \code{destino} y lo devuelve como data frame.
+Descarga el archivo con los datos diarios de una estación del INTA lo guarda en \code{destino} y lo devuelve como data frame.
 }
 \examples{
 \donttest{
