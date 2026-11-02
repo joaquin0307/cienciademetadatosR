@@ -1,4 +1,4 @@
-test_that("devuelve una fila por estacion con las columnas esperadas", {
+test_that("devuelve una fila por estación con las columnas esperadas", {
   tabla <- tabla_resumen_temperatura(estaciones, ids = c("NH0472", "NH0910"))
 
   expect_s3_class(tabla, "data.frame")

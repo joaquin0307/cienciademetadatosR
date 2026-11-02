@@ -1,4 +1,4 @@
-test_that("descarga y lee los datos de una estacion", {
+test_that("descarga y lee los datos de una estación", {
   skip_if_offline()
   skip_on_cran()
 

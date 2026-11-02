@@ -1,4 +1,4 @@
-# Tests de los controles de los argumentos (issue de revision de pares)
+# Tests de los controles de los argumentos (issue de revisión de pares)
 
 # --- datos ------------------------------------------------------------------
 
@@ -26,7 +26,7 @@ test_that("datos sin las columnas necesarias dan error", {
 
 # --- ids --------------------------------------------------------------------
 
-test_that("ids vacio o que no es texto da error", {
+test_that("ids vacío o que no es texto da error", {
   expect_error(tabla_resumen_temperatura(estaciones, ids = character(0)), "no puede estar vac")
   expect_error(tabla_resumen_temperatura(estaciones, ids = 472), "tiene que ser texto")
   expect_error(grafico_temperatura_mensual(estaciones, ids = NULL), "no puede estar vac")
@@ -39,7 +39,7 @@ test_that("el error de ids inexistentes nombra las estaciones que faltan", {
   )
 })
 
-# --- grafico: titulo y colores ----------------------------------------------
+# --- gráfico: título y colores ----------------------------------------------
 
 test_that("titulo tiene que ser un solo texto", {
   expect_error(grafico_temperatura_mensual(estaciones, ids = "NH0472", titulo = 123),
@@ -63,7 +63,7 @@ test_that("acepta colores en formato hexadecimal", {
   expect_s3_class(grafico, "ggplot")
 })
 
-test_that("la temperatura tiene que ser numerica y la fecha valida", {
+test_that("la temperatura tiene que ser numérica y la fecha válida", {
   texto <- estaciones
   texto$temperatura_abrigo_150cm <- as.character(texto$temperatura_abrigo_150cm)
   expect_error(grafico_temperatura_mensual(texto, ids = "NH0472"), "num")
@@ -75,7 +75,7 @@ test_that("la temperatura tiene que ser numerica y la fecha valida", {
 
 # --- tabla: estaciones sin datos --------------------------------------------
 
-test_that("avisa si una estacion no tiene datos de temperatura", {
+test_that("avisa si una estación no tiene datos de temperatura", {
   sin_temp <- estaciones[estaciones$id == "NH0472", ]
   sin_temp$temperatura_abrigo_150cm <- NA_real_
   expect_warning(tabla_resumen_temperatura(sin_temp), "no tienen datos")
@@ -93,7 +93,7 @@ test_that("leer_datos controla sus argumentos", {
                "no existe")
 })
 
-test_that("leer_datos acepta el id en minuscula", {
+test_that("leer_datos acepta el id en minúscula", {
   skip_if_offline()
   skip_on_cran()
   datos <- suppressMessages(leer_datos("nh0910", destino = tempfile(fileext = ".csv")))
