@@ -51,21 +51,52 @@ El paquete también incluye el conjunto de datos `estaciones`, con registros
 diarios de temperatura de 5 estaciones entre 2010 y 2017, para usar en los
 ejemplos.
 
-## Ejemplo
+## Ejemplos
+
+Primero cargamos el paquete:
 
 ```{r example}
 library(cienciademetadatosR)
-
-head(estaciones)
 ```
 
-Resumen de temperaturas de dos estaciones:
+### Los datos de ejemplo
+
+El dataset `estaciones` tiene una fila por día y por estación, con la
+temperatura media, máxima y mínima medida en el abrigo meteorológico a 150 cm.
+Estas son las primeras filas:
 
 ```{r}
-tabla_resumen_temperatura(estaciones, ids = c("NH0472", "NH0910"))
+knitr::kable(head(estaciones))
 ```
 
-Temperatura media mensual:
+### Descargar los datos de una estación: `leer_datos()`
+
+Descarga el archivo completo de una estación desde internet, lo guarda en la
+ruta que le indiques y lo devuelve como tabla. Sirve cuando necesitás todas
+las variables o todos los años de una estación, y no solo el recorte de
+`estaciones`.
+
+```{r, eval = FALSE}
+datos_nh0437 <- leer_datos("NH0437", destino = "NH0437.csv")
+```
+
+### Resumir las temperaturas: `tabla_resumen_temperatura()`
+
+Calcula, para cada estación, la temperatura mínima y máxima registradas, y el
+promedio y el desvío estándar de la temperatura media. Sirve para comparar
+rápidamente el clima de varias estaciones.
+
+```{r}
+knitr::kable(
+  tabla_resumen_temperatura(estaciones, ids = c("NH0472", "NH0910")),
+  digits = 1
+)
+```
+
+### Graficar la temperatura a lo largo del año: `grafico_temperatura_mensual()`
+
+Calcula la temperatura media de cada mes y dibuja una línea por estación, así
+se ve el ciclo anual de la temperatura (verano e invierno).
 
 ```{r grafico}
 grafico_temperatura_mensual(
