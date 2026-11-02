@@ -19,6 +19,18 @@
 #' }
 #'
 leer_datos <- function(id_estacion, destino) {
+  #si el id estacion es un vector, o pasan un numero (x ejemplo), lo controlamos
+  if (!is.character(id_estacion) || length(id_estacion) != 1) {
+    cli::cli_abort(c(
+      "{.arg id_estacion} debe ser un solo texto.",
+      "x" = "Se recibio {.cls {class(id_estacion)}} de largo {length(id_estacion)}."
+    ))
+  }
+  #controlamos la ruta
+  if (!dir.exists(dirname(destino))) {
+    cli::cli_abort("La carpeta {.path {dirname(destino)}} no existe.")
+  }
+
   url_NH <- paste0(
     "https://raw.githubusercontent.com/rse-r/intro-programacion/main/datos/",
     id_estacion, ".csv"
