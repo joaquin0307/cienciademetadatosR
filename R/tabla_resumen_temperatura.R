@@ -20,9 +20,22 @@
 #' tabla_resumen_temperatura(estaciones)
 tabla_resumen_temperatura <- function(datos, ids = unique(datos$id)) {
 
-  faltantes <- setdiff(ids, datos$id)
-  if (length(faltantes) > 0) {
-    cli::cli_abort("No se encontraron estas estaciones en {.arg datos}: {faltantes}.")
+  validar_datos(datos, c("id", "temperatura_abrigo_150cm",
+                         "temperatura_abrigo_150cm_maxima",
+                         "temperatura_abrigo_150cm_minima"))
+  validar_ids(ids, datos)
+
+  sin_datos <- datos |>
+    dplyr::filter(id %in% ids) |>
+    dplyr::group_by(id) |>
+    dplyr::filter(all(is.na(temperatura_abrigo_150cm))) |>
+    dplyr::pull(id) |>
+    unique()
+  if (length(sin_datos) > 0) {
+    cli::cli_warn(c(
+      "Estas estaciones no tienen datos de temperatura: {.val {sin_datos}}.",
+      "i" = "Sus valores en la tabla van a ser {.code NA} o {.code Inf}."
+    ))
   }
 
   datos |>

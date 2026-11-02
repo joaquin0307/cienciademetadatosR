@@ -27,9 +27,46 @@
 grafico_temperatura_mensual <- function(datos, ids = unique(datos$id),
                                         colores = NULL, titulo = "Temperatura") {
 
-  faltantes <- setdiff(ids, datos$id)
-  if (length(faltantes) > 0) {
-    cli::cli_abort("No se encontraron estas estaciones en {.arg datos}: {faltantes}.")
+  validar_datos(datos, c("id", "fecha", "temperatura_abrigo_150cm"))
+  validar_ids(ids, datos)
+  validar_texto(titulo, "titulo")
+
+  if (!is.numeric(datos$temperatura_abrigo_150cm)) {
+    cli::cli_abort(c(
+      "La columna {.field temperatura_abrigo_150cm} tiene que ser num\u00e9rica.",
+      "x" = "Es de clase {.cls {class(datos$temperatura_abrigo_150cm)}}."
+    ))
+  }
+
+  fechas <- tryCatch(suppressWarnings(as.Date(datos$fecha)), error = function(e) NA)
+  if (all(is.na(fechas))) {
+    cli::cli_abort(c(
+      "No se pudo interpretar la columna {.field fecha} como fecha.",
+      "i" = "Las fechas tienen que tener el formato {.val AAAA-MM-DD}, por ejemplo {.val 2015-03-21}."
+    ))
+  }
+
+  n_estaciones <- length(unique(ids))
+  if (!is.null(colores)) {
+    if (!is.character(colores)) {
+      cli::cli_abort(c(
+        "{.arg colores} tiene que ser un vector de texto.",
+        "i" = "Por ejemplo: {.code colores = c(\"steelblue\", \"firebrick\")}."
+      ))
+    }
+    if (length(colores) < n_estaciones) {
+      cli::cli_abort(c(
+        "Faltan colores: hay {n_estaciones} estaci{?\u00f3n/ones} y pasaste {length(colores)} color{?es}.",
+        "i" = "Pas\u00e1 un color por estaci\u00f3n, o dej\u00e1 {.code colores = NULL} para elegirlos al azar."
+      ))
+    }
+    invalidos <- colores[!colores %in% grDevices::colors() & !grepl("^#[0-9A-Fa-f]{6}$", colores)]
+    if (length(invalidos) > 0) {
+      cli::cli_abort(c(
+        "Estos colores no existen en R: {.val {invalidos}}.",
+        "i" = "Pod\u00e9s ver los nombres v\u00e1lidos con {.fn colors}, o usar c\u00f3digos como {.val #1F77B4}."
+      ))
+    }
   }
 
   datos <- datos |>
