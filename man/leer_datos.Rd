@@ -8,9 +8,11 @@ leer_datos(id_estacion, destino)
 }
 \arguments{
 \item{id_estacion}{Texto con el identificador de la estación
-(por ejemplo \code{"NH0472"}).}
+(por ejemplo \code{"NH0472"}). Las estaciones disponibles son NH0046,
+NH0098, NH0437, NH0472 y NH0910.}
 
-\item{destino}{Ruta del archivo donde se guardan los datos descargados.}
+\item{destino}{Ruta del archivo donde se guardan los datos descargados.
+La carpeta tiene que existir.}
 }
 \value{
 Un data frame (tibble) con los datos diarios de la estación.
@@ -20,11 +22,8 @@ Descarga el archivo con los datos diarios de una estación desde el
 repositorio del curso, lo guarda en \code{destino} y lo devuelve como data frame.
 }
 \examples{
-
 \donttest{
 datos <- leer_datos("NH0472", destino = tempfile(fileext = ".csv"))
 head(datos)
-
 }
-
 }
