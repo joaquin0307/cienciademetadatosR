@@ -31,7 +31,7 @@ Un data frame (tibble) con los datos diarios de la estación.
 ``` r
 # \donttest{
 datos <- leer_datos("NH0472", destino = tempfile(fileext = ".csv"))
-#> ✔ Datos de "NH0472" guardados en /tmp/Rtmpi2skJX/file1adde5f3858.csv.
+#> ✔ Datos de "NH0472" guardados en /tmp/Rtmp56URKp/file1c7b278a79e2.csv.
 head(datos)
 #> # A tibble: 6 × 35
 #>   id     fecha      temperatura_abrigo_150cm temperatura_abrigo_150cm_maxima

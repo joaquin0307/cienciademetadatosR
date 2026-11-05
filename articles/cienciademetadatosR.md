@@ -19,22 +19,17 @@ sin descargar nada.
 
 ``` r
 
-head(estaciones)
-#>       id      fecha temperatura_abrigo_150cm temperatura_abrigo_150cm_maxima
-#> 1 NH0472 2010-01-01                    23.35                            27.5
-#> 2 NH0472 2010-01-02                    23.85                            31.9
-#> 3 NH0472 2010-01-03                    26.00                            31.8
-#> 4 NH0472 2010-01-04                    28.00                            34.5
-#> 5 NH0472 2010-01-05                    27.50                            36.1
-#> 6 NH0472 2010-01-06                    22.05                            25.5
-#>   temperatura_abrigo_150cm_minima
-#> 1                            19.2
-#> 2                            15.8
-#> 3                            20.2
-#> 4                            21.5
-#> 5                            18.9
-#> 6                            18.6
+knitr::kable(head(estaciones))
 ```
+
+| id | fecha | temperatura_abrigo_150cm | temperatura_abrigo_150cm_maxima | temperatura_abrigo_150cm_minima |
+|:---|:---|---:|---:|---:|
+| NH0472 | 2010-01-01 | 23.35 | 27.5 | 19.2 |
+| NH0472 | 2010-01-02 | 23.85 | 31.9 | 15.8 |
+| NH0472 | 2010-01-03 | 26.00 | 31.8 | 20.2 |
+| NH0472 | 2010-01-04 | 28.00 | 34.5 | 21.5 |
+| NH0472 | 2010-01-05 | 27.50 | 36.1 | 18.9 |
+| NH0472 | 2010-01-06 | 22.05 | 25.5 | 18.6 |
 
 Cada fila es un día en una estación. Las columnas son:
 
