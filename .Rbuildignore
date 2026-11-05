@@ -13,3 +13,5 @@
 ^CODE_OF_CONDUCT\.md$
 ^datos_estaciones\.csv$
 ^codecov\.yml$
+^doc$
+^Meta$
