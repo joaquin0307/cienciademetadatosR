@@ -42,10 +42,7 @@ también te ayuda a escribir un test, si es necesario.
 - Hacé tus cambios, creá un commit con git y luego creá el PR ejecutando
   `usethis::pr_push()` y siguiendo las indicaciones de tu navegador. El
   título del PR debería describir brevemente el cambio. El cuerpo del PR
-  debe contener “Arreglo \#número-de-issue”.
-- Para los cambios que ve el usuario, agregá una descripción al
-  principio de `NEWS.md` (justo debajo del primer encabezado). Seguí el
-  estilo descrito en <https://style.tidyverse.org/news.html>.
+  debe contener “Closes \#número-de-issue”.
 
 ## Estilo de código
 
@@ -65,5 +62,5 @@ también te ayuda a escribir un test, si es necesario.
 ## Código de Conducta
 
 Este proyecto se publica con un [Código de Conducta para
-Contribuyentes](https://joaquin0307.github.io/cienciademetadatosR/CODE_OF_CONDUCT.md).
-Al participar, aceptás cumplir sus términos.
+Contribuyentes](https://joaquin0307.github.io/CODE_OF_CONDUCT.md). Al
+participar, aceptás cumplir sus términos.
