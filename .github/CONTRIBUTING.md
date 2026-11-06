@@ -21,8 +21,7 @@ Si querés hacer un cambio mayor, es buena idea abrir primero un issue y asegura
 * Hacé un fork del paquete y clonalo en tu computadora. Si nunca lo hiciste, te recomendamos usar `usethis::create_from_github("joaquin0307/cienciademetadatosR", fork = TRUE)`.
 * Instalá todas las dependencias de desarrollo con `devtools::install_dev_deps()` y asegurate de que el paquete pase el chequeo R CMD ejecutando `devtools::check()`. Si el chequeo no pasa completamente, es buena idea pedir ayuda antes de continuar.
 * Creá una nueva rama de Git para tu pull request (PR). Recomendamos usar `usethis::pr_init("breve descripción del cambio")`.
-* Hacé tus cambios, creá un commit con git y luego creá el PR ejecutando `usethis::pr_push()` y siguiendo las indicaciones de tu navegador. El título del PR debería describir brevemente el cambio. El cuerpo del PR debe contener "Arreglo #número-de-issue".
-* Para los cambios que ve el usuario, agregá una descripción al principio de `NEWS.md` (justo debajo del primer encabezado). Seguí el estilo descrito en <https://style.tidyverse.org/news.html>.
+* Hacé tus cambios, creá un commit con git y luego creá el PR ejecutando `usethis::pr_push()` y siguiendo las indicaciones de tu navegador. El título del PR debería describir brevemente el cambio. El cuerpo del PR debe contener "Closes #número-de-issue".
 
 ## Estilo de código
 
@@ -32,4 +31,4 @@ Si querés hacer un cambio mayor, es buena idea abrir primero un issue y asegura
 
 ## Código de Conducta
 
-Este proyecto se publica con un [Código de Conducta para Contribuyentes](CODE_OF_CONDUCT.md). Al participar, aceptás cumplir sus términos.
+Este proyecto se publica con un [Código de Conducta para Contribuyentes]((../CODE_OF_CONDUCT.md)). Al participar, aceptás cumplir sus términos.
