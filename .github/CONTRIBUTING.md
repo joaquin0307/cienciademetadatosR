@@ -31,4 +31,4 @@ Si querés hacer un cambio mayor, es buena idea abrir primero un issue y asegura
 
 ## Código de Conducta
 
-Este proyecto se publica con un [Código de Conducta para Contribuyentes]((../CODE_OF_CONDUCT.md)). Al participar, aceptás cumplir sus términos.
+Este proyecto se publica con un [Código de Conducta para Contribuyentes](../CODE_OF_CONDUCT.md). Al participar, aceptás cumplir sus términos.
